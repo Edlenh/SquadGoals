@@ -6,10 +6,10 @@ const goalSchema = new Schema({
         type: String,
         required: true,
     },
-    // user_id:{
-    //     type:String,
-    //     required:true
-    // },
+    user_id:{
+        type: String,
+        required:true
+    },
     
     //created on 
     //implement expirations

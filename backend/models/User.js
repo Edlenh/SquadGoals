@@ -39,7 +39,7 @@ userSchema.statics.signup = async function(email, username, password){
     }
     //Needs Cap, Numbers , special
     if(!validator.isStrongPassword(password)){
-        throw Error('Weak Password, try again')
+        throw Error('Password requires Uppercase, Numbers, and Special Character')
     }
 
     //check if provided email is already in use

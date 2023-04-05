@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 //GET ALL
 const getGoals = async(req,res)=>{
-    const user_id = req.user_id
+    const user_id = req.user._id
     const goals = await Goal.find({user_id}).sort({createdAt: -1})
     res.status(200).json(goals)
 }
@@ -25,12 +25,12 @@ const singleGoal = async(req,res)=>{
 const createGoal = async(req,res)=>{
     const {title} = req.body
     try{
-    // const user_id = req.user._id
-    const goal = await Goal.create({title})
+    const user_id = req.user._id
+    const goal = await Goal.create({title, user_id})
     res.status(200).json(goal)
 
     }catch(error){
-        res.status(400).json({error:error.message})
+        res.status(400).json({error: error.message})
     }
 }
 
