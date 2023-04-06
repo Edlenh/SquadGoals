@@ -27,14 +27,10 @@ const Login = ()=>{
             onChange={(e)=> setPassword(e.target.value)}
             value={password} 
             />
-
-
             <button disabled={loading}>Login</button>
             {error && <div className="error">{error}</div>}
         </form>
     )
 };
-
-
 export default Login
 

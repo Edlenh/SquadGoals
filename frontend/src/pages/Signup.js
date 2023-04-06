@@ -22,7 +22,7 @@ const SignUp = ()=>{
         />
         <label>Username:</label>
         <input
-        type = "username"
+        type = "text"
         onChange={(e)=> setUsername(e.target.value)}
         value={username}
         />
