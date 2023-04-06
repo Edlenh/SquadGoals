@@ -30,7 +30,7 @@ const userSchema = new Schema({
 userSchema.statics.signup = async function(email, username, password){
     //check for validation and if all info is provided, else throw error
     
-    if(!email || !password){
+    if(!email || !username|| !password){
         //check all fields are provided
         throw Error('Please Fill in All Fields')
     }
@@ -59,6 +59,7 @@ userSchema.statics.signup = async function(email, username, password){
 }
 
 //user login 
+//dont pass in username to login. sign up via email + pw
 userSchema.statics.login = async function(email, password){
     if(!email || !password){
         throw Error('All Fields required')

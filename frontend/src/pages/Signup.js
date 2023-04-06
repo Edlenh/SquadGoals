@@ -20,11 +20,11 @@ const SignUp = ()=>{
         onChange={(e)=> setEmail(e.target.value)}
         value={email}
         />
-        <label>Username:</label>
+         <label>Username:</label>
         <input
-        type = "text"
+        type ="text"
         onChange={(e)=> setUsername(e.target.value)}
-        value={username}
+        value={username} 
         />
         <label>Password:</label>
         <input
