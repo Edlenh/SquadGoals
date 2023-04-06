@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import SignUp from './pages/Signup';
 
 function App() {
+
   const {user} =useAuthContext()
   return (
     <div className="App">

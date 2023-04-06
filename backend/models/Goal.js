@@ -10,6 +10,10 @@ const goalSchema = new Schema({
         type: String,
         required:true
     },
+    finishOn:{
+        type: String,
+        required: true
+    }
     
     //created on 
     //implement expirations

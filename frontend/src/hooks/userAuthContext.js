@@ -5,7 +5,7 @@ import { useContext } from "react";
 export const useAuthContext =()=>{
     const context = useContext(AuthContext)
     if(!context){
-        throw Error('bad context')
+        throw Error('bad user context')
     }
     return context
 }

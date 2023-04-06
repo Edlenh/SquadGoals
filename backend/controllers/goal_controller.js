@@ -26,7 +26,7 @@ const createGoal = async(req,res)=>{
     const {title} = req.body
     try{
     const user_id = req.user._id
-    const goal = await Goal.create({title, user_id})
+    const goal = await Goal.create({title, finishOn, user_id})
     res.status(200).json(goal)
 
     }catch(error){

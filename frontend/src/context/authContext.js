@@ -1,5 +1,6 @@
 import { createContext , useReducer, useEffect} from "react";
 
+//this will be passed to a goal hook to be used globally
 export const AuthContext = createContext()
 export const authReducer = (state, action)=>{
     switch (action.type){
