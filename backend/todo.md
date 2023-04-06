@@ -8,16 +8,19 @@ Monday - 4-3
 -Set up routes to make goal //DONE
 -CRUD //DONE
 
-Tuesday- 4-4 (Today)
-Assign goals to user 
-
+Tuesday- 4-4
+Authenticate user /DONE
+ReRoute if not logged in /DONE 
 
 Wednesday 4-5
-Linking users to eachother 
-Display each users goals on seperate page >>  Your Goals
-Display each users goals on their home page  >> Your Squad Goals
+bug fixing // DONE
+sign up sign out  log in functionality //DONE
 
 Thursday 4-6
+Display each users goals on seperate page >>  Your Goals
+Display each users goals on their home page  >> Your Squad Goals
+Assign goals to user 
+Linking users to eachother 
 Start notifications 
 react-notifications-component
 if user completes goal > send notif to other user > (maybe a pop up on side bar or something) > then post goal completed on Squad Goal page

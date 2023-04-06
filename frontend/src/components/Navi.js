@@ -1,13 +1,14 @@
-import {Link } from 'react-router-dom'
-// import { useLogout } from '../hooks/userLogOut'
+import { Link } from 'react-router-dom'
+import { useLogout } from '../hooks/userLogOut'
 import { useAuthContext } from '../hooks/userAuthContext'
 
 const Nav =  ()=>{
-    // const {logout} = useLogout()
-    const {user } = useAuthContext()
-    // const logoutClick =()=>{
-    //     logout()
-    // }
+    const { logout } = useLogout()
+    const { user } = useAuthContext()
+    console.log(user)
+    const logoutClick =()=>{
+        logout()
+    }
     return(
         <header>
             <div className="container">
@@ -18,7 +19,8 @@ const Nav =  ()=>{
                 { user && (
                 <div>
                     <span>{user.username}</span>
-                    {/* <button onClick={logoutClick}>Log Out</button> */}
+                    <span>{user.email}</span>
+                    <button onClick={ logoutClick }>Log Out</button>
                 </div>
                 )}
                 {!user && (

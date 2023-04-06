@@ -13,7 +13,6 @@ function App() {
       <BrowserRouter>
       <Nav />
       <div className='pages'>
-      <h1>Wow look at my goals</h1>
       <Routes>
         <Route 
         path='/'
