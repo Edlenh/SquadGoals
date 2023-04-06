@@ -56,3 +56,37 @@ form.signup, form.login {
   background: #fff;
   border-radius: 4px;
 }
+
+.goal-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.goal-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.goal-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+.material-symbols-outlined{
+  cursor: pointer;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}

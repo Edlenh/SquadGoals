@@ -15,10 +15,10 @@ const Board = ({goal})=>{
         if(!user){
             return
         }
-        const response = await fetch('/api/goal' + goal._id,{
+        const response = await fetch('/api/goal/' + goal._id,{
             method: 'DELETE',
             headers:{
-                'Authorization' :`Bearer${user.token}`
+                'Authorization' :`Bearer ${user.token}`
             }
         })
         const json = await response.json()
@@ -48,7 +48,7 @@ const Board = ({goal})=>{
         const json = response.json();
         if(response.ok){
             setEditing(false);
-            dispatch({type: 'UPDATE_WORKOUT', payload: json});
+            dispatch({type: 'UPDATE_GOAL', payload: json});
         }
     };
 
@@ -79,9 +79,9 @@ const Board = ({goal})=>{
     return(
         <div className="goal-details">
             <h4>{goal.title}</h4>
-            <p><strong>Finsh On: {goal.finishOn}</strong></p>
-            <h2 onClick={deleteClick}>delete</h2>
-            <h2 onClick={updateClick}>update</h2>
+            <p><strong>Finish On: {goal.finishOn}</strong></p>
+            <h2 className="material-symbols-outlined"onClick={deleteClick}>delete</h2>
+            <span className="material-symbols-outlined" onClick={updateClick}>edit</span>
         </div>
     )
 }
