@@ -6,7 +6,7 @@ const Form = ()=>{
     const {dispatch} = useGoalContext()
     const {user} = useAuthContext()
     const [title, setTitle]= useState('')
-    const [finishOn, setFinishOn]=useState('')
+    const [finishOn, setFinishOn] = useState('');
     const [error, setError] = useState(null)
     // const [emptyFields, setEmptyFields]= useState([])
     
@@ -17,8 +17,9 @@ const Form = ()=>{
             setError('Must Be Logged In!')
             return
         }
-    const goal = {title, finishOn}
+        const goal = { title, finishOn };
     const response = await fetch('/api/goal', {
+        
         method: 'POST',
         body: JSON.stringify(goal),
         headers:{
@@ -28,6 +29,7 @@ const Form = ()=>{
     })
     const json = await response.json()
     if(!response.ok){
+        console.log('wrong route')
         setError(json.error)
         // setEmptyFields(json.emptyFields)
     }

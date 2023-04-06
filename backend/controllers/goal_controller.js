@@ -23,7 +23,7 @@ const singleGoal = async(req,res)=>{
 }
 //post one - Create
 const createGoal = async(req,res)=>{
-    const {title} = req.body
+    const {title, finishOn} = req.body
     try{
     const user_id = req.user._id
     const goal = await Goal.create({title, finishOn, user_id})
