@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/userLogOut'
 import { useAuthContext } from '../hooks/userAuthContext'
 
+
 const Nav =  ()=>{
     const { logout } = useLogout()
     const { user } = useAuthContext()
@@ -18,9 +19,10 @@ const Nav =  ()=>{
             <nav>
                 { user && (
                 <div>
-                    <span>{user.username}</span>
-                    <span>{user.email}</span>
+                    <span className='main-user'>Hey {user.email}</span>
+                    <Link to ="/feed">Friends</Link>
                     <button onClick={ logoutClick }>Log Out</button>
+
                 </div>
                 )}
                 {!user && (

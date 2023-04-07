@@ -61,7 +61,7 @@ const Board = ({goal})=>{
         }
     };
 
-    //editing existing goals
+    //editing existing goals and current goals
     if(editing){
         return(
             <form onSubmit={handleSubmit}>

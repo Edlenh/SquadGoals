@@ -5,6 +5,8 @@
   --highlight-color: #2EC4B6;
   --accent-color: #E4FDE1;
   --error:#d00000;
+  --bg-main: #252422;
+
 }
 
 body {
@@ -95,6 +97,7 @@ form.signup, form.login {
   color: var(--accent-color);
   padding: 6px;
   border-radius: 50%;
+  font-size: 15px;
 }
 
 form button {
@@ -113,5 +116,10 @@ form button {
 
 .main-title{
   color:var(--highlight-color);
-  font-family: 'Permanent Marker', cursive;;
+  font-family: 'Permanent Marker', cursive;
+  background-color: var(--bg-main);
+}
+
+.main-user{
+  font-family: 'Permanent Marker', cursive;
 }
