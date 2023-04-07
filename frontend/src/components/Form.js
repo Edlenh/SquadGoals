@@ -31,8 +31,8 @@ const Form = ()=>{
     })
     const json = await response.json()
     if(!response.ok){
-        console.log('wrong route')
-        setError(json.error)
+        console.log('All fields required')
+        setError('All Fields Required')
         // setEmptyFields(json.emptyFields)
     }
     if(response.ok){

@@ -13,7 +13,7 @@ const Nav =  ()=>{
         <header>
             <div className="container">
             <Link to="/">
-                <h1>Squad Goals</h1>
+                <h1 className='main-title'>Squad Goals</h1>
             </Link>
             <nav>
                 { user && (
