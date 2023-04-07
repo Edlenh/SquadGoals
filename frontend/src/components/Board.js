@@ -1,3 +1,5 @@
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import React from 'react';
 import { useGoalContext } from "../hooks/userGoal";
 import { useState } from "react";
 import { useAuthContext } from "../hooks/userAuthContext";
@@ -9,6 +11,7 @@ const Board = ({goal})=>{
     const [boardData, setBoardData] = useState({
         title: goal.title,
         finishOn: goal.finishOn,
+        progress: goal.progress
     })
 
     const deleteClick = async ()=>{
@@ -42,16 +45,23 @@ const Board = ({goal})=>{
             method: 'PUT',
             body: JSON.stringify(boardData),
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' :`Bearer ${user.token}`
             }
         })
-        const json = response.json();
+        const json = await response.json();
+        console.log(json)
+        if(!response.ok){
+            console.log('update broken')
+        }
+
         if(response.ok){
             setEditing(false);
             dispatch({type: 'UPDATE_GOAL', payload: json});
         }
     };
 
+    //editing existing goals
     if(editing){
         return(
             <form onSubmit={handleSubmit}>
@@ -65,9 +75,16 @@ const Board = ({goal})=>{
                 />
                 <label>Finish On:</label>
                 <input
-                type="text"
+                type="date"
                 name="finishOn"
                 value={boardData.finishOn}
+                onChange={handleChange} 
+                />
+                <label>Progress</label>
+                <input
+                type="number"
+                name="progress"
+                value={boardData.progress}
                 onChange={handleChange} 
                 />
             <button type="submit">Save</button>
@@ -78,8 +95,12 @@ const Board = ({goal})=>{
 
     return(
         <div className="goal-details">
-            <h4>{goal.title}</h4>
+             <p><strong>Goal: {goal.title}</strong></p>
+           
             <p><strong>Finish On: {goal.finishOn}</strong></p>
+            <p><strong>Current Progress: {goal.progress}%</strong></p>
+            
+            <ProgressBar variant="info" now={goal.progress} label={`${goal.progress}%`}/>
             <h2 className="material-symbols-outlined"onClick={deleteClick}>delete</h2>
             <span className="material-symbols-outlined" onClick={updateClick}>edit</span>
         </div>

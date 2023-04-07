@@ -7,6 +7,7 @@ const Form = ()=>{
     const {user} = useAuthContext()
     const [title, setTitle]= useState('')
     const [finishOn, setFinishOn] = useState('');
+    const [progress, setProgress] = useState('')
     const [error, setError] = useState(null)
     // const [emptyFields, setEmptyFields]= useState([])
     
@@ -17,7 +18,8 @@ const Form = ()=>{
             setError('Must Be Logged In!')
             return
         }
-        const goal = { title, finishOn };
+        const goal = { title, finishOn, progress };
+        console.log('required fields')
     const response = await fetch('/api/goal', {
         
         method: 'POST',
@@ -43,6 +45,7 @@ const Form = ()=>{
     }
     }
     return(
+        //creating a new goal
         <form className="create" onSubmit={handleSubmit}>
             <h3>Start a New Goal</h3>
             <label>Goal: </label>
@@ -55,11 +58,19 @@ const Form = ()=>{
             />
             <label>Finish Date: </label>
             <input
-            type="text"
+            type="date"
             onChange={(e)=>setFinishOn(e.target.value)}
             value={finishOn}
             // className={emptyFields.includes('finishOn')? 'error':''}
             />
+            <label>Current Progress %: </label>
+            <input
+            type="number"
+            onChange={(e)=>setProgress(e.target.value)}
+            value={progress}
+            // className={emptyFields.includes('finishOn')? 'error':''}
+            />
+
 
             <button>Add Goal</button>
             {error && <div className="error">{error}</div>}

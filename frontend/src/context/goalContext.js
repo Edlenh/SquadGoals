@@ -19,8 +19,8 @@ export const goalReducer =(state, action)=>{
             }
         case 'UPDATE_GOAL':
             return{
-                goals:state.goals.map((goal)=>
-                goal._id ===action.payload._id ? 
+                goals: state.goals.map((goal)=>
+                goal._id === action.payload._id ? 
                 action.payload : goal)}
         default:
             return state

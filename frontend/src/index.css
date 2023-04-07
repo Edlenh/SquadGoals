@@ -38,7 +38,7 @@ nav a {
 }
 
 nav button{
-  background: #fff;
+  background: lavender;
   color: var(--error);
   border: 2px solid var(--error);
   padding: 6px 10px;
@@ -82,9 +82,9 @@ form.signup, form.login {
 }
 
 form button {
-  background: var(--primary);
+  background: lavender;
   border: 0;
-  color: #fff;
+  color: black;
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;

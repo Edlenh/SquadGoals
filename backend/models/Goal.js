@@ -13,6 +13,10 @@ const goalSchema = new Schema({
     finishOn:{
         type: String,
         required: true
+    },
+    progress:{
+        type: Number,
+        required: true
     }
     
     //created on 

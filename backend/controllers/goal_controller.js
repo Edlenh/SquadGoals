@@ -15,18 +15,18 @@ const getGoals = async(req,res)=>{
 //     res.status(200).json(goals)
 // }
 //GET SINGLE
-const singleGoal = async(req,res)=>{
-    const {id} = req.params
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: "Goal Doesnt Exist"})
-    }
-}
+// const singleGoal = async(req,res)=>{
+//     const {id} = req.params
+//     if(!mongoose.Types.ObjectId.isValid(id)){
+//         return res.status(404).json({error: "Goal Doesnt Exist"})
+//     }
+// }
 //post one - Create
 const createGoal = async(req,res)=>{
-    const {title, finishOn} = req.body
+    const {title, finishOn, progress} = req.body
     try{
     const user_id = req.user._id
-    const goal = await Goal.create({title, finishOn, user_id})
+    const goal = await Goal.create({title, finishOn, user_id, progress})
     res.status(200).json(goal)
 
     }catch(error){

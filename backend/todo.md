@@ -17,15 +17,16 @@ bug fixing // DONE
 sign up sign out  log in functionality //DONE
 
 Thursday 4-6
-Display each users goals on seperate page >>  Your Goals
+Display each users goals on seperate page >>  Your Goals //DONE
 Display each users goals on their home page  >> Your Squad Goals
-Assign goals to user 
+Assign goals to user  //DONE 
 Linking users to eachother 
+
+
+Friday 4-7
 Start notifications 
 react-notifications-component
 if user completes goal > send notif to other user > (maybe a pop up on side bar or something) > then post goal completed on Squad Goal page
-
-Friday 4-7
 Notification work - working real time
 ping expirations dates
 
