@@ -1,3 +1,11 @@
+:root{
+  --main-color: #114B5F;
+  --secondary-color: #028090;
+  --primary-color: #2A9D8F;
+  --highlight-color: #2EC4B6;
+  --accent-color: #E4FDE1;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -68,9 +76,9 @@ form.signup, form.login {
   color: #555;
 }
 .goal-details span {
-  position: absolute;
+  /* position: absolute;
   top: 20px;
-  right: 20px;
+  right: 20px; */
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
@@ -89,4 +97,8 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+}
+
+.progress-bar{
+  background:var(--highlight-color)
 }

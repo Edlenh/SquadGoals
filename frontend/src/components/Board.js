@@ -100,7 +100,7 @@ const Board = ({goal})=>{
             <p><strong>Finish On: {goal.finishOn}</strong></p>
             <p><strong>Current Progress: {goal.progress}%</strong></p>
             
-            <ProgressBar variant="info" now={goal.progress} label={`${goal.progress}%`}/>
+            <ProgressBar className="bar"now={goal.progress} label={`${goal.progress}%`}/>
             <h2 className="material-symbols-outlined"onClick={deleteClick}>delete</h2>
             <span className="material-symbols-outlined" onClick={updateClick}>edit</span>
         </div>
