@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 //validator library checks for valid emails / kinda like regex
 const validator = require('validator')
+
 //Mongoose schema to link up to mongo db
 const Schema = mongoose.Schema
 
@@ -23,8 +24,13 @@ const userSchema = new Schema({
         required: true
     },
     friends: [{
+        friend_email: {
+            type: String,
+            required: true
+        },
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+       
     }]
 });
 
@@ -82,16 +88,16 @@ userSchema.statics.login = async function(email, password){
 }
 
 //add friend static method
-userSchema.statics.addFriend = async function(user_id,friend_id){
+userSchema.statics.addFriend = async function(user_id, friend_email){
     try{
         const user = await this.findById(user_id)
-        const friend = await this.findById(friend_id)
+        const friend = await this.findOne({email: friend_email})
 
         if (!user || !friend) {
             throw new Error('User or Friend not found');
         }
         
-        user.friends.push(friend_id)
+        user.friends.push(friend)
         await user.save()
         return user;
     }catch(error){

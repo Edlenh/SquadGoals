@@ -8,7 +8,7 @@ router.get('/',getUsers)
 router.post('/signup',signupUser)
 //user login 
 router.post('/login', loginUser)
-//user sign out
-// router.delete('/signout', signoutUser)
-router.post('/:user_id/friends/:friend_id',addFriend)
+//add friend
+router.post('/:user_id/friends/:friend_email',addFriend)
+
 module.exports = router
