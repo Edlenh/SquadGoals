@@ -22,6 +22,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 });
 
 //sign up method using static methods
@@ -74,6 +78,25 @@ userSchema.statics.login = async function(email, password){
         throw Error('Email or Password not valid')
     }
     return user
+
+}
+
+//add friend static method
+userSchema.statics.addFriend = async function(user_id,friend_id){
+    try{
+        const user = await this.findById(user_id)
+        const friend = await this.findById(friend_id)
+
+        if (!user || !friend) {
+            throw new Error('User or Friend not found');
+        }
+        
+        user.friends.push(friend_id)
+        await user.save()
+        return user;
+    }catch(error){
+        throw Error('Could not add Friend')
+    }
 
 }
 

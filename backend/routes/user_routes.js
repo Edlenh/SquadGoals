@@ -1,5 +1,5 @@
 const express = require('express');
-const {loginUser, signupUser, getUsers} = require('../controllers/user_controller')
+const {loginUser, signupUser, getUsers, addFriend} = require('../controllers/user_controller')
 const router = express.Router();
 
 //find users
@@ -10,4 +10,5 @@ router.post('/signup',signupUser)
 router.post('/login', loginUser)
 //user sign out
 // router.delete('/signout', signoutUser)
+router.post('/:user_id/friends/:friend_id',addFriend)
 module.exports = router

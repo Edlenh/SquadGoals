@@ -19,7 +19,7 @@ const Nav =  ()=>{
             <nav>
                 { user && (
                 <div>
-                    <span className='main-user'>Hey {user.email}</span>
+                    <span className='main-user'>Hey  {user.email}</span>
                     <Link to ="/feed">Friends</Link>
                     <button onClick={ logoutClick }>Log Out</button>
 

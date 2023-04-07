@@ -49,4 +49,15 @@ const getUsers = async (req,res)=>{
         res.status(400).json({error: error.message})
     }
 }
-module.exports = {signupUser, loginUser, getUsers}
+
+const addFriend = async (req,res)=>{
+    try{
+        const user_id = req.params.user_id;
+        const friend_id = req.params.friend_id
+        const user = await User.addFriend(user_id, friend_id)
+        res.json({message: 'Added Friend!', user})
+    }catch(error){
+        res.status(404).json({error:'Friend Not Found'})
+    }
+}
+module.exports = {signupUser, loginUser, getUsers, addFriend}

@@ -16,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -57,7 +58,7 @@ nav button{
   border: 2px solid var(--accent-color);
   padding: 6px 10px;
   border-radius: 4px;
-  font-family: "Poppins";
+  font-family: 'Bangers';
   cursor: pointer;
   font-size: 1em;
   margin-left: 10px;

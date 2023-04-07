@@ -6,8 +6,10 @@ const Feed =()=>{
         <Link to="/">
                 <h1>Home</h1>
             </Link>
-        <h1>Here is feed for friends</h1>
         <h2>Add Friend</h2>
+        <h1>Squad Goals</h1>
+        {/* todo - add search drop down of all registered users
+        todo - display each users goals besides the one that is logged in */}
         </div>
     )
 }
