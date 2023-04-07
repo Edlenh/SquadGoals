@@ -8,19 +8,13 @@ const getGoals = async(req,res)=>{
     const goals = await Goal.find({user_id}).sort({createdAt: -1})
     res.status(200).json(goals)
 }
-//get own users goals
-// const getOwnGoals = async(req,res)=>{
-//     const user_id = req.user_id
-//     const goals = await Goal.find({user_id}).sort({createdAt: -1})
-//     res.status(200).json(goals)
-// }
-//GET SINGLE
-// const singleGoal = async(req,res)=>{
-//     const {id} = req.params
-//     if(!mongoose.Types.ObjectId.isValid(id)){
-//         return res.status(404).json({error: "Goal Doesnt Exist"})
-//     }
-// }
+//get own friend goals
+const getFriendGoals = async(req,res)=>{
+    const user_id = req.user_id
+    const goals = await Goal.find({user_id}).sort({createdAt: -1})
+    res.status(200).json(goals)
+}
+
 //post one - Create
 const createGoal = async(req,res)=>{
     const {title, finishOn, progress} = req.body

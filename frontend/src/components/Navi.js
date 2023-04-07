@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useLogout } from '../hooks/userLogOut'
 import { useAuthContext } from '../hooks/userAuthContext'
 
@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/userAuthContext'
 const Nav =  ()=>{
     const { logout } = useLogout()
     const { user } = useAuthContext()
+    const location = useLocation()
     console.log(user)
     const logoutClick =()=>{
         logout()
@@ -20,7 +21,13 @@ const Nav =  ()=>{
                 { user && (
                 <div>
                     <span className='main-user'>Hey  {user.email}</span>
-                    <Link to ="/feed">Friends</Link>
+                    {location.pathname !== '/feed' && ( 
+                                <Link to="/feed">Friends</Link>
+                            )}
+                            {location.pathname !== '/' && ( 
+                                <Link to="/">Home</Link>
+                            )}
+                   
                     <button onClick={ logoutClick }>Log Out</button>
 
                 </div>
