@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useAuthContext } from '../hooks/userAuthContext';
 
-const Feed = (user_id) => {
+const Feed = () => {
+  const {user} = useAuthContext()
     const [searchEmail, setSearchEmail] = useState(''); // State to capture search input
     const [users, setUsers] = useState([]); // State to store all users
     const [filteredUsers, setFilteredUsers] = useState([]); // State to store filtered users
     const [errorMessage, setErrorMessage] = useState('');
+    // const [successMesssage, setSuccessMessage] = useState('')
 
     // Fetch all users on component mount
     useEffect(() => {
@@ -38,15 +41,16 @@ const Feed = (user_id) => {
         };
     // Function to handle adding a friend
     const handleAddFriend = async (friendEmail) => {
-        try {
-            const response = await fetch(`/api/user/${user_id}/friends/${friendEmail}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ friendEmail })
-            });
-    
+      try {
+        const response = await fetch(`/api/user/${user.email}/friends/${friendEmail}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        
+          body: JSON.stringify({ friendEmail })
+        });
+            console.log(friendEmail)
             if(response.ok){
                 console.log('Friend Added')
                 

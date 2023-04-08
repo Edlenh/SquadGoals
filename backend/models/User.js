@@ -88,22 +88,21 @@ userSchema.statics.login = async function(email, password){
 }
 
 //add friend static method
-userSchema.statics.addFriend = async function(user_id, friend_email){
+userSchema.statics.addFriend = async function(user_email, friend_email){
     try{
-        const user = await this.findById(user_id)
-        const friend = await this.findOne({email: friend_email})
+        const user = await this.findOne({email: user_email});
+        const friend = await this.findOne({email: friend_email});
 
         if (!user || !friend) {
             throw new Error('User or Friend not found');
         }
         
-        user.friends.push(friend)
-        await user.save()
+        user.friends.push(friend);
+        await user.save();
         return user;
-    }catch(error){
-        throw Error('Could not add Friend')
+    } catch(error){
+        throw new Error('Could not add Friend');
     }
-
-}
+};
 
 module.exports = mongoose.model('User', userSchema)

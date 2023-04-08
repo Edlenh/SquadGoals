@@ -50,17 +50,16 @@ const getUsers = async (req,res)=>{
     }
 }
 
-const addFriend = async (req,res)=>{
-    try{
-        const user_id = req.params.user_id;
-        const friend_email = req.params.friend_email
-      
-        const user = await User.addFriend(user_id, friend_email)
-        res.json({message: 'Added Friend!', user})
-    }catch(error){
-        res.status(404).json({error:'Friend Not Found'})
+const addFriend = async (req, res) => {
+    try {
+      const user_email = req.params.user_email;
+      const friend_email = req.params.friend_email;
+        
+      const user = await User.addFriend(user_email, friend_email); 
+      res.json({ message: 'Added Friend!', user });
+    } catch (error) {
+      res.status(404).json({ error: 'Friend Not Found' });
     }
-}
-
+  };
 
 module.exports = {signupUser, loginUser, getUsers, addFriend}
