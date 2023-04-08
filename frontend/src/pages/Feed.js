@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
+import jwt from 'jwt-decode' 
 
 const Feed = () => {
   // console.log("hitting Feed page")
   const {user} = useAuthContext()
+
+  console.log(user)
+ const userId =jwt(user.token)._id
+
+
     const [searchEmail, setSearchEmail] = useState(''); // State to capture search input
     const [users, setUsers] = useState([]); // State to store all users
     const [filteredUsers, setFilteredUsers] = useState([]); // State to store filtered users
     const [errorMessage, setErrorMessage] = useState('');
     const [successMesssage, setSuccessMessage] = useState('')
 
-    // Fetch all users on component mount
+    // Fetch all users 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -24,13 +30,13 @@ const Feed = () => {
         fetchUsers();
     }, []);
 
-    // Function to handle search input change
+    // handle search input change
     const handleSearchChange = (e) => {
         setSearchEmail(e.target.value);
         setSuccessMessage("")
     };
 
-    // Function to handle search button click
+    //  handle search button click
     const handleSearchClick = async () => {
         // Filter users based on search input
         const filtered = users.filter(user => user.email.includes(searchEmail));
@@ -41,20 +47,20 @@ const Feed = () => {
             setErrorMessage('');
           }
         };
-    // Function to handle adding a friend
-    const handleAddFriend = async (friendEmail) => {
+    //  handle adding a friend
+    const handleAddFriend = async (friendId) => {
       try {
-        const response = await fetch(`/api/user/${user.email}/friends/${friendEmail}`, {
+        const response = await fetch(`/api/user/${userId}/friends/${friendId}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
         
-          body: JSON.stringify({ friendEmail })
+          body: JSON.stringify({ friendId})
         });
-            console.log(friendEmail)
+            console.log(friendId)
             if(response.ok){
-              setSuccessMessage(`${friendEmail} added to your friend list!`);
+              setSuccessMessage(`${friendId} added to your friend list!`);
               setSearchEmail('')
               setFilteredUsers([])
                 console.log('Friend Added')
@@ -85,7 +91,7 @@ const Feed = () => {
               filteredUsers.map(user => (
                 <div key={user._id}>
                   <p>{user.email}</p>
-                  <button onClick={() => handleAddFriend(user.email)}>Add Friend</button>
+                  <button onClick={() => handleAddFriend(user._id)}>Add Friend</button>
                
                 </div>
               ))

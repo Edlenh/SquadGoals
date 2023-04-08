@@ -25,7 +25,7 @@ export const AuthContextProvider = ({children})=>{
         }
     }, [])
 
-    // console.log('AuthContext state:' ,state)
+    //this will cover the entire app making sure that only logged in users have access
     return (
         <AuthContext.Provider value={{...state, dispatch}}>
             {children}

@@ -9,6 +9,6 @@ router.post('/signup',signupUser)
 //user login 
 router.post('/login', loginUser)
 //add friend
-router.post('/:user_email/friends/:friend_email', addFriend);
+router.post('/:userId/friends/:friendId', addFriend);
 
 module.exports = router

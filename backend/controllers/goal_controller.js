@@ -1,6 +1,7 @@
 const Goal = require('../models/Goal')
 //import mongoose when dealing with params
 const mongoose = require('mongoose')
+const User = require('../models/User')
 
 //GET ALL
 const getGoals = async(req,res)=>{
@@ -10,9 +11,17 @@ const getGoals = async(req,res)=>{
 }
 //get own friend goals
 const getFriendGoals = async(req,res)=>{
-    const user_id = req.user_id
-    const goals = await Goal.find({user_id}).sort({createdAt: -1})
-    res.status(200).json(goals)
+    try{
+        const user = await User.findById(req.user._id).populate('friends')
+        const friends = user.friends; 
+        // const user = await User.findById(req.user._id).populate('friends')
+        // const friendEmails = user.friends.map(friend => friend.friend_email); // Extract friend email addresses
+        // const friendgoals = await Goal.find({user_id}).sort({createdAt: -1})
+        res.status(200).json(friends);
+         
+    }catch(error){
+        res.status(500).json({message: "Failed to get friend's goals", error: error.message})
+    }
 }
 
 //post one - Create
@@ -61,5 +70,5 @@ module.exports = {
     getGoals,
     updateGoal,
     deleteGoal,
-    // getOwnGoals,
+   getFriendGoals,
 }

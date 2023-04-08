@@ -14,7 +14,7 @@ const loginUser = async(req,res)=>{
         const user = await User.login(email, password)
         const token = createToken(user._id)
         //assign the token to the user id
-        res.status(200).json({email,token})
+        res.status(200).json({email,token,  userId: user._id})
     }catch(error){
         res.status(400).json({error:error.message})
     }
@@ -52,10 +52,19 @@ const getUsers = async (req,res)=>{
 
 const addFriend = async (req, res) => {
     try {
-      const user_email = req.params.user_email;
-      const friend_email = req.params.friend_email;
-        
-      const user = await User.addFriend(user_email, friend_email); 
+      const userId = req.params.userId;
+      const friendId = req.params.friendId;
+  
+      const user = await User.findById(userId);
+      const friend = await User.findById(friendId);
+  
+      if (!user || !friend) {
+        throw new Error('User or Friend not found');
+      }
+  
+      user.friends.push(friendId);
+      await user.save();
+  
       res.json({ message: 'Added Friend!', user });
     } catch (error) {
       res.status(404).json({ error: 'Friend Not Found' });

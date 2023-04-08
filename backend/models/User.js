@@ -11,28 +11,27 @@ const Schema = mongoose.Schema
 //unique true checks if the email is already in use or not.
 const userSchema = new Schema({
     email: {
-        type: String,
-        unique: true,
-        required: true
+      type: String,
+      unique: true,
+      required: true,
     },
-    username:{
-        type: String,
-        required: true
+    username: {
+      type: String,
+      required: true,
     },
-    password:{
-        type: String,
-        required: true
+    password: {
+      type: String,
+      required: true,
     },
+    goals: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Goal',
+    }],
     friends: [{
-        friend_email: {
-            type: String,
-            required: true
-        },
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-       
-    }]
-});
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    }],
+  });
 
 //sign up method using static methods
 //Statics allow for defining functions that exist directly on your Model.
@@ -88,21 +87,21 @@ userSchema.statics.login = async function(email, password){
 }
 
 //add friend static method
-userSchema.statics.addFriend = async function(user_email, friend_email){
+userSchema.statics.addFriend = async function(userId, friendId){
     try{
-        const user = await this.findOne({email: user_email});
-        const friend = await this.findOne({email: friend_email});
-
-        if (!user || !friend) {
-            throw new Error('User or Friend not found');
-        }
-        
-        user.friends.push(friend);
-        await user.save();
-        return user;
+      const user = await this.findById(userId);
+      const friend = await this.findById(friendId);
+  
+      if (!user || !friend) {
+        throw new Error('User or Friend not found');
+      }
+  
+      user.friends.push(friendId);
+      await user.save();
+      return user;
     } catch(error){
-        throw new Error('Could not add Friend');
+      throw new Error('Could not add Friend');
     }
-};
+  };
 
 module.exports = mongoose.model('User', userSchema)

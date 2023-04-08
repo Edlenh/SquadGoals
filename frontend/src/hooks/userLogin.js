@@ -6,7 +6,7 @@ export const useLogin = ()=>{
     const [loading, setLoading] = useState(false)
     const {dispatch} = useAuthContext()
 
-    const login = async (email, password)=>{
+    const login = async (email, password, userId)=>{
         setLoading(true)
         setError(null)
 
@@ -15,7 +15,7 @@ export const useLogin = ()=>{
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email,password})
         })
-        console.log("user logged in", email)
+        console.log("user logged in", email, userId)
         const json = await response.json()
 
         if(!response.ok){
@@ -24,7 +24,7 @@ export const useLogin = ()=>{
         }
         if(response.ok){
             localStorage.setItem('user', JSON.stringify(json))
-            dispatch({type: 'LOGIN', payload: json})
+            dispatch({type: 'LOGIN', payload: {...json, _id: userId}})
             setLoading(false)
         }
     }
