@@ -9,17 +9,14 @@ const Form = ()=>{
     const [finishOn, setFinishOn] = useState('');
     const [progress, setProgress] = useState('')
     const [error, setError] = useState(null)
-    // const [emptyFields, setEmptyFields]= useState([])
     
-
     const handleSubmit = async(e)=>{
         e.preventDefault()
         if(!user){
             setError('Must Be Logged In!')
             return
         }
-        const goal = { title, finishOn, progress };
-        console.log('required fields')
+    const goal = { title, finishOn, progress };
     const response = await fetch('/api/goal', {
         
         method: 'POST',
@@ -33,13 +30,11 @@ const Form = ()=>{
     if(!response.ok){
         console.log('All fields required')
         setError('All Fields Required')
-        // setEmptyFields(json.emptyFields)
     }
     if(response.ok){
         setTitle('')
         setFinishOn('')
         setError(null)
-        // setEmptyFields([])
         console.log('New Goal Started', json)
         dispatch({type:'CREATE_GOAL', payload: json})
     }
@@ -53,28 +48,21 @@ const Form = ()=>{
             type="text"
             onChange={(e)=>setTitle(e.target.value)}
             value={title}
-         
-            // className={emptyFields.includes('title')?'error': ''}
             />
             <label>Finish Date: </label>
             <input
             type="date"
             onChange={(e)=>setFinishOn(e.target.value)}
             value={finishOn}
-            // className={emptyFields.includes('finishOn')? 'error':''}
             />
             <label>Current Progress %: </label>
             <input
             type="number"
             onChange={(e)=>setProgress(e.target.value)}
             value={progress}
-            // className={emptyFields.includes('finishOn')? 'error':''}
             />
-
-
             <button>Add Goal</button>
             {error && <div className="error">{error}</div>}
-
         </form>
     )
 }

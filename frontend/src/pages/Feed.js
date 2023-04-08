@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 
 const Feed = () => {
-  console.log("hitting Feed page")
+  // console.log("hitting Feed page")
   const {user} = useAuthContext()
     const [searchEmail, setSearchEmail] = useState(''); // State to capture search input
     const [users, setUsers] = useState([]); // State to store all users
     const [filteredUsers, setFilteredUsers] = useState([]); // State to store filtered users
     const [errorMessage, setErrorMessage] = useState('');
-    // const [successMesssage, setSuccessMessage] = useState('')
+    const [successMesssage, setSuccessMessage] = useState('')
 
     // Fetch all users on component mount
     useEffect(() => {
@@ -27,6 +27,7 @@ const Feed = () => {
     // Function to handle search input change
     const handleSearchChange = (e) => {
         setSearchEmail(e.target.value);
+        setSuccessMessage("")
     };
 
     // Function to handle search button click
@@ -53,6 +54,9 @@ const Feed = () => {
         });
             console.log(friendEmail)
             if(response.ok){
+              setSuccessMessage(`${friendEmail} added to your friend list!`);
+              setSearchEmail('')
+              setFilteredUsers([])
                 console.log('Friend Added')
                 
             }
@@ -64,6 +68,7 @@ const Feed = () => {
     const handleCancelAddFriend = () => {
         setFilteredUsers([]);
         setErrorMessage('');
+        
       };
     
 
@@ -87,6 +92,7 @@ const Feed = () => {
             ) : (
               <p>{errorMessage}</p>
             )}
+            <p>{successMesssage}</p>
           </div>
         </div>
       );
