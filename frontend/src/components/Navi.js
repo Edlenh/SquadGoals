@@ -7,7 +7,7 @@ const Nav =  ()=>{
     const { logout } = useLogout()
     const { user } = useAuthContext()
     const location = useLocation()
-    console.log(user)
+    // console.log(user)
     const logoutClick =()=>{
         logout()
     }

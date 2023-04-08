@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useAuthContext } from "../hooks/userAuthContext";
 
 const Board = ({goal})=>{
+    console.log("hitting home page")
     const {dispatch} = useGoalContext()
     const {user} = useAuthContext()
     const [editing, setEditing] = useState(false)

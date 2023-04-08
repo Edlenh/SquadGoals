@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 
 const Feed = () => {
+  console.log("hitting Feed page")
   const {user} = useAuthContext()
     const [searchEmail, setSearchEmail] = useState(''); // State to capture search input
     const [users, setUsers] = useState([]); // State to store all users
