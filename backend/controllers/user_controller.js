@@ -31,15 +31,6 @@ const signupUser = async(req,res)=>{
         res.status(400).json({error: error.message})
     }
 };
-//user sign out (i dont think i need this route )
-// const signoutUser = async (req, res) => {
-//     try {
-//       res.clearCookie('jwt') // Clear the JWT token cookie
-//       res.status(200).json({ message: 'Signed out successfully' })
-//     } catch (error) {
-//       res.status(500).json({ error: error.message })
-//     }
-// };
 
 const getUsers = async (req,res)=>{
     try {

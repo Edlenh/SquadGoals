@@ -4,8 +4,7 @@ const{
     getGoals,
     updateGoal,
     deleteGoal,
-    getFriendGoals,
-    getData 
+    getFriendGoals, 
 } = require('../controllers/goal_controller')
 const requireAutho = require('../util/auth');
 const router = express.Router()

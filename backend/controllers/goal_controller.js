@@ -3,13 +3,14 @@ const Goal = require('../models/Goal')
 const mongoose = require('mongoose')
 const User = require('../models/User')
 
-//GET ALL
+//get logged in user goal
 const getGoals = async(req,res)=>{
     const user_id = req.user._id
     const goals = await Goal.find({user_id}).sort({createdAt: -1})
     res.status(200).json(goals)
 }
-//get own friend goals
+
+//get friend goals
 const getFriendGoals = async(req,res)=>{
     const user_id = req.user._id
     try{
@@ -80,5 +81,4 @@ module.exports = {
     updateGoal,
     deleteGoal,
    getFriendGoals,
-//    getData ,
 }

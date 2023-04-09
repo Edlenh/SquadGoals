@@ -22,17 +22,23 @@ Assign goals to user  //DONE
 
 
 Friday 4-7
-Linking users to eachother 
+Linking users to eachother //DONE
 Display each users goals on their home page  >> Your Squad Goals
-Start notifications 
-react-notifications-component
-if user completes goal > send notif to other user > (maybe a pop up on side bar or something) > then post goal completed on Squad Goal page
+Squad Goal page WIP
 Notification work - working real time
 ping expirations dates
 
 
 Saturday 
-work out bugs
+work out bugs //DONE
 
+Sunday
+Notification work - working real time
+ping expirations dates
+Start notifications 
+react-notifications-component
+if user completes goal > send notif to other user > (maybe a pop up on side bar or something) > then post goal completed on 
+
+Monday
 Implement motivational quote on their home page >> ChatGPT text-davinci-003
 if too simple look into how to obtain your goals based on the categories you are providing to ChatGPT 
