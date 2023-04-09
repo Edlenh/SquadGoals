@@ -36,6 +36,7 @@ const FriendGoals = () => {
             <p>Title: {goal.title}</p>
             <p>Progress: {goal.progress}</p>
             <p>Created At: {goal.createdAt}</p>
+            <h1>WOOHOO</h1>
           </li>
           ))}
       </ul>
