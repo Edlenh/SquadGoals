@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 //validator library checks for valid emails / kinda like regex
 const validator = require('validator')
 
+
 //Mongoose schema to link up to mongo db
 const Schema = mongoose.Schema
 
