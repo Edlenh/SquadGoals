@@ -11,8 +11,9 @@ const getGoals = async(req,res)=>{
 }
 //get own friend goals
 const getFriendGoals = async(req,res)=>{
+    const user_id = req.user._id
     try{
-        const user = await User.findById('64324245cd1b6574003508f7')
+        const user = await User.findById(user_id)
         .populate('goals') // populate the 'goals'
         .populate({
             path: "friends",
