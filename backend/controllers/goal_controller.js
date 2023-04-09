@@ -12,16 +12,13 @@ const getGoals = async(req,res)=>{
 //get own friend goals
 const getFriendGoals = async(req,res)=>{
     try{
-        const user = await User.findById('64323a65a01b9f06a3e2c345')
+        const user = await User.findById('64324245cd1b6574003508f7')
         .populate('goals') // populate the 'goals'
-        .exec();
-    //   .populate({
-    //     path: 'friends',
-    //     populate: { path: 'goals' },
-    //   });
-        // const user = await User.findById(req.user._id).populate('friends')
-        // const friendEmails = user.friends.map(friend => friend.friend_email); // Extract friend email addresses
-        // const friendgoals = await Goal.find({user_id}).sort({createdAt: -1})
+        .populate({
+            path: "friends",
+            populate: { path: 'goals' },
+          })
+          
         res.status(200).json(user);
         
     }catch(error){
@@ -29,30 +26,20 @@ const getFriendGoals = async(req,res)=>{
     }
 }
 
-const getData = async (req,res) => {
-    try {
-        const user = await User.findById(req.user._id)
-        .populate('goals')
-        .populate({
-          path: 'friends',
-          populate: { path: 'goals' },
-        });
-        const goals = user.goals
-      res.status(200).json(goals);
-    } catch (err) {
-      res.status(500).json({message: "No Friend's GOals",error: error.message})
-    }
-  };
 
 
 //post one - Create
 const createGoal = async(req,res)=>{
     const {title, finishOn, progress} = req.body
     try{
-    const user_id = req.user._id
+    const user_id = req.user._id 
+    const user = await User.findById(user_id);
     const goal = await Goal.create({title, finishOn, user_id, progress})
+    await goal.save()
+    user.goals.push(goal._id);
+    await user.save()
     res.status(200).json(goal)
-
+    
     }catch(error){
         res.status(400).json({error: error.message})
     }
@@ -92,5 +79,5 @@ module.exports = {
     updateGoal,
     deleteGoal,
    getFriendGoals,
-   getData ,
+//    getData ,
 }
