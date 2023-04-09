@@ -22,6 +22,10 @@ export const goalReducer =(state, action)=>{
                 goals: state.goals.map((goal)=>
                 goal._id === action.payload._id ? 
                 action.payload : goal)}
+        case 'SET_FRIEND_GOALS':
+            return {
+        friendGoals: action.payload
+      }
         default:
             return state
             }

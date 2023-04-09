@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 import jwt from 'jwt-decode' 
+import Friends from '../components/Friends'
 
 const Feed = () => {
   // console.log("hitting Feed page")
   const {user} = useAuthContext()
 
-  console.log(user)
+ 
  const userId =jwt(user.token)._id
 
 
@@ -76,7 +77,7 @@ const Feed = () => {
         setErrorMessage('');
         
       };
-    
+      
 
     return (
         <div>
@@ -99,6 +100,9 @@ const Feed = () => {
               <p>{errorMessage}</p>
             )}
             <p>{successMesssage}</p>
+          </div>
+          <div className='friend-goal'>
+            <Friends />
           </div>
         </div>
       );
