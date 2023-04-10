@@ -20,7 +20,7 @@ const Nav =  ()=>{
             <nav>
                 { user && (
                 <div>
-                    <span className='main-user'>Hey  {user.email}</span>
+                    <span className='main-user'> <span className='main-span'>Hey</span>  {user.email}</span>
                     {location.pathname !== '/feed' && ( 
                                 <Link to="/feed">Friends</Link>
                             )}

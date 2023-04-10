@@ -11,6 +11,8 @@ const Login = ()=>{
        await login(email,password)
     }
     return (
+
+        <div>
         <form className ="login" onSubmit={submitHandler}>
             <h2>Log In</h2>
             <label>Email:</label>
@@ -30,6 +32,10 @@ const Login = ()=>{
             <button disabled={loading}>Login</button>
             {error && <div className="error">{error}</div>}
         </form>
+
+        <h1 className="form-foot">SQUAD GOALS</h1>
+        <p>Welcome Back!</p>
+</div>
     )
 };
 export default Login

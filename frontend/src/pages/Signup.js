@@ -11,7 +11,7 @@ const SignUp = ()=>{
         e.preventDefault()
         await signup(email, username, password)
     }   
-    return(
+    return(<div>
         <form className ="signup" onSubmit={submitHandler}>
         <h2>Sign Up</h2>
         <label>Email:</label>
@@ -37,6 +37,15 @@ const SignUp = ()=>{
         <button disabled={loading}>Submit</button>
         {error && <div className="error">{error}</div>}
     </form>
+        <section className="form-section">
+        <h1 className="form-foot">SQUAD GOALS</h1>
+        <div className="ptag">
+            <div className="pshadow"><small>
+                Getting it done, together</small></div>
+        </div>
+        </section>
+   
+    </div>
 )
 };
 

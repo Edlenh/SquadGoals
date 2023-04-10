@@ -5,9 +5,11 @@ import { useState } from "react";
 import { useAuthContext } from "../hooks/userAuthContext";
 
 const Board = ({goal})=>{
-   
+  
     const {dispatch} = useGoalContext()
+    
     const {user} = useAuthContext()
+    console.log(user)
     const [editing, setEditing] = useState(false)
     const [boardData, setBoardData] = useState({
         title: goal.title,

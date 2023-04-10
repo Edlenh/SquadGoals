@@ -141,7 +141,10 @@ form button {
 }
 
 .progress-bar{
-  background:var(--highlight-color)
+  background:var(--accent-color);
+  color: var(--bg-main);
+  font-family: 'Bangers';
+  font-weight: bolder;
 }
 
 .main-title{
@@ -156,4 +159,47 @@ form button {
 
 li{
   list-style: none;
+}
+
+.main-span{
+  color:var(--accent-color);
+}
+
+.form-foot{
+font-family: 'Permanent Marker', cursive;
+}
+
+.form-section{
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.pshadow{
+  font-style: italic;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: #fff;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px;
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	letter-spacing: 0.2em;
+	animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+.pshadow :hover{
+  color: #fff;
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.5;
+		text-shadow: 2px 2px 10px #fff;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 2px 2px 20px #fff;
+	}
 }
