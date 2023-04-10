@@ -21,12 +21,13 @@ const FriendGoals = () => {
         // Iterate through the data.friends array
         for (let i = 0; i < data.friends.length; i++) {
           const friend = data.friends[i]; 
-  
           // Check if the friend object has a goals property and it is an array
           if (friend.goals && Array.isArray(friend.goals)) {
             // Loop through the goals array of the friend object
             for (let j = 0; j < friend.goals.length; j++) {
+              
               const goal = friend.goals[j]; 
+              goal.friendUsername = friend.username;
               fetchedFriendGoals.push(goal); 
             }
           }
@@ -46,9 +47,10 @@ const FriendGoals = () => {
     <div>
       <h1>Friend Goals</h1>
       <ul>
-        
+      
       {friendGoals.map((goals, index) => (
   <li key={index}>
+    <h3>Friend: {goals.friendUsername}</h3>
     <p>Title: {goals.title}</p>
     <p>Progress: {goals.progress}</p>
     <p>Created At: {goals.createdAt}</p>
