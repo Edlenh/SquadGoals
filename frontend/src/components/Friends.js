@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useGoalContext } from "../hooks/userGoal";
+
 import { useAuthContext } from '../hooks/userAuthContext';
 const FriendGoals = () => {
   const {user} = useAuthContext()
-  const {dispatch} = useGoalContext()
   const [friendGoals, setFriendGoals] = useState([]);
 
   useEffect(() => {
@@ -17,13 +16,29 @@ const FriendGoals = () => {
             }
         });
         const data = await response.json();
-        console.log(data)
-        setFriendGoals(data.goals);
+        const fetchedFriendGoals = []; 
+  
+        // Iterate through the data.friends array
+        for (let i = 0; i < data.friends.length; i++) {
+          const friend = data.friends[i]; 
+  
+          // Check if the friend object has a goals property and it is an array
+          if (friend.goals && Array.isArray(friend.goals)) {
+            // Loop through the goals array of the friend object
+            for (let j = 0; j < friend.goals.length; j++) {
+              const goal = friend.goals[j]; 
+              fetchedFriendGoals.push(goal); 
+            }
+          }
+        }
+  
+        console.log("Friend Goals:", fetchedFriendGoals);
+        setFriendGoals(fetchedFriendGoals); 
       } catch (error) {
         console.error('Error fetching friend goals:', error);
       }
     };
-
+  
     fetchFriendGoals();
   }, [user]);
 
@@ -31,14 +46,14 @@ const FriendGoals = () => {
     <div>
       <h1>Friend Goals</h1>
       <ul>
-      {friendGoals.map((goal, index) => (
-          <li key={index}>
-            <p>Title: {goal.title}</p>
-            <p>Progress: {goal.progress}</p>
-            <p>Created At: {goal.createdAt}</p>
-            <h1>WOOHOO</h1>
-          </li>
-          ))}
+        
+      {friendGoals.map((goals, index) => (
+  <li key={index}>
+    <p>Title: {goals.title}</p>
+    <p>Progress: {goals.progress}</p>
+    <p>Created At: {goals.createdAt}</p>
+  </li>
+))}
       </ul>
     </div>
   );

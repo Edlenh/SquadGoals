@@ -64,7 +64,8 @@ const Feed = () => {
               setSuccessMessage("Succesfully added to your friend list!");
               setSearchEmail('')
               setFilteredUsers([])
-                console.log('Friend Added')
+              
+              console.log('Friend Added')
                 
             }
         } catch (error) {

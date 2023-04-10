@@ -153,3 +153,7 @@ form button {
 .main-user{
   font-family: 'Permanent Marker', cursive;
 }
+
+li{
+  list-style: none;
+}
