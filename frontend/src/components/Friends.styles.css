@@ -1,0 +1,13 @@
+:root{
+    --main-color: #114B5F;
+    --secondary-color: #028090;
+    --primary-color: #2A9D8F;
+    --highlight-color: #2EC4B6;
+    --accent-color: #E4FDE1;
+    --error:#d00000;
+    --bg-main: #252422;
+  
+  }
+.friend-feed{
+    color: var(--highlight-color)
+}
