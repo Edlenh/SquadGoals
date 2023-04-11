@@ -26,6 +26,7 @@ const Home =()=>{
         }
     },[dispatch, user])
     return(
+        <div>
         <div className="home">
         <div className="goals">
     
@@ -34,6 +35,9 @@ const Home =()=>{
         ))}
         </div>
         <Form />
+       
+        </div>
+        <h1 className="home-footer">Something cool will go here</h1>
         </div>
     )
 }

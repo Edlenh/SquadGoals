@@ -30,8 +30,12 @@ Saturday
 work out bugs //DONE
 
 Sunday
+styling SIGN UP LOGIN // DONE
 
 Monday
+styling home page //DONE
+
+Tuesday
 Implement motivational quote on their home page >> ChatGPT text-davinci-003
 if too simple look into how to obtain your goals based on the categories you are providing to ChatGPT 
 Notification work - working real time

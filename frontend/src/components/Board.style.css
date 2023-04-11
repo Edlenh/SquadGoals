@@ -8,7 +8,11 @@
     --bg-main: #252422;
   
   }
-
+nav {
+    display: inline-flex;
+    margin-right: 20px;
+    justify-content: space-between;
+}
 .main-user{
     color: var(--accent-color)
 }
@@ -16,11 +20,10 @@
 
 .goal-details {
     background: var(--bg-main);
-    /* border-radius: 4px; */
     margin: 20px auto;
     padding: 20px;
-    position: relative;
-    border: solid 1px var(--highlight-color);
+    box-shadow: -1px 1px 5px 2px var(--highlight-color);
+  
   }
 
 .goal-details p {
@@ -40,5 +43,12 @@
 }
 
 .create{
-    color:var(--highlight-color)
+    color:var(--highlight-color);
+    font-family: 'Bangers';
+}
+.create label{
+    font-size: 25px;
+}
+.material-symbols-outlined{
+    margin-left: 10px;
 }
