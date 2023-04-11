@@ -3,6 +3,7 @@ import React from 'react';
 import { useGoalContext } from "../hooks/userGoal";
 import { useState } from "react";
 import { useAuthContext } from "../hooks/userAuthContext";
+import './Board.style.css'
 
 const Board = ({goal})=>{
   
@@ -98,14 +99,14 @@ const Board = ({goal})=>{
 
     return(
         <div className="goal-details">
-             <p><strong>Goal: {goal.title}</strong></p>
+             <p className='goal-title'><strong> {goal.title}</strong></p>
            
             <p><strong>Finish On: {goal.finishOn}</strong></p>
             <p><strong>Current Progress: {goal.progress}%</strong></p>
             
-            <ProgressBar className="bar"now={goal.progress} label={`${goal.progress}%`}/>
-            <h2 className="material-symbols-outlined"onClick={deleteClick}>delete</h2>
-            <span className="material-symbols-outlined" onClick={updateClick}>edit</span>
+            <ProgressBar className="bar" now={goal.progress} label={`${goal.progress}%`}/>
+            <h2 className="material-symbols-outlined"onClick={deleteClick}>delete_sweep</h2>
+            <span className="material-symbols-outlined" onClick={updateClick}>edit_square</span>
         </div>
     )
 }

@@ -16,23 +16,18 @@ const SignUp = ()=>{
         <div className="signup-bg">
         <form className ="signup" onSubmit={submitHandler}>
         <h2 className="signup-main">Sign Up</h2>
-        {/* <label>Email</label> */}
         <input
         placeholder="Email"
         type = "email"
         onChange={(e)=> setEmail(e.target.value)}
         value={email}
         />
-        <br></br>
-         {/* <label>Username</label> */}
         <input
         placeholder="Username"
         type ="text"
         onChange={(e)=> setUsername(e.target.value)}
         value={username} 
         />
-        <br></br>
-        {/* <label>Password</label> */}
         <input
         placeholder="Password"
         type ="password"
