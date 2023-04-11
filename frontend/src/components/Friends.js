@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import { useAuthContext } from '../hooks/userAuthContext';
+import './Friends.styles.css'
+
 const FriendGoals = () => {
   const {user} = useAuthContext()
   const [friendGoals, setFriendGoals] = useState([]);
@@ -44,7 +45,7 @@ const FriendGoals = () => {
   }, [user]);
 
   return (
-    <div>
+    <div className='friend-feed'>
       <h1>Friend Goals</h1>
       <ul>
       
@@ -57,6 +58,7 @@ const FriendGoals = () => {
   </li>
 ))}
       </ul>
+    
     </div>
   );
 };

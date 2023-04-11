@@ -8,11 +8,17 @@
     --bg-main: #252422;
   
   }
-nav {
+/* nav {
     display: inline-flex;
     margin-right: 20px;
     justify-content: space-between;
-}
+} */
+
+ nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
 .main-user{
     color: var(--accent-color)
 }
