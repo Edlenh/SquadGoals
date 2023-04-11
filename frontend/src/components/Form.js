@@ -43,8 +43,8 @@ const Form = ()=>{
         //creating a new goal
         <form className="create" onSubmit={handleSubmit}>
             <h3>Start a New Goal</h3>
-            <label>Goal: </label>
             <input
+            placeholder="Title"
             type="text"
             onChange={(e)=>setTitle(e.target.value)}
             value={title}
@@ -57,6 +57,7 @@ const Form = ()=>{
             />
             <label>Current Progress %: </label>
             <input
+            placeholder="Current Progress %"
             type="number"
             onChange={(e)=>setProgress(e.target.value)}
             value={progress}

@@ -1,0 +1,44 @@
+:root{
+    --main-color: #114B5F;
+    --secondary-color: #028090;
+    --primary-color: #2A9D8F;
+    --highlight-color: #2EC4B6;
+    --accent-color: #E4FDE1;
+    --error:#d00000;
+    --bg-main: #252422;
+  
+  }
+
+.main-user{
+    color: var(--accent-color)
+}
+
+
+.goal-details {
+    background: var(--bg-main);
+    /* border-radius: 4px; */
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    border: solid 1px var(--highlight-color);
+  }
+
+.goal-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--accent-color)
+  }
+
+.progress-bar{
+    background:var(--primary-color);
+    color: var(--bg-main);
+    font-family: 'Bangers';
+    font-weight: bolder;
+  }
+.goal-title{
+    font-size: 25px;
+}
+
+.create{
+    color:var(--highlight-color)
+}
