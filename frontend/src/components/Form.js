@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGoalContext } from "../hooks/userGoal";
 import { useAuthContext } from "../hooks/userAuthContext";
+import goalSvg from '../components/assets/images/goals.svg'
 
 const Form = ()=>{
     const {dispatch} = useGoalContext()
@@ -64,7 +65,10 @@ const Form = ()=>{
             />
             <button>Add Goal</button>
             {error && <div className="error">{error}</div>}
+            <h1 className="home-footer">Something cool will go here</h1>
+            <img alt="girl with list of goals"src={goalSvg} />
         </form>
+        
     )
 }
 

@@ -37,7 +37,7 @@ const Home =()=>{
         <Form />
        
         </div>
-        <h1 className="home-footer">Something cool will go here</h1>
+     
         </div>
     )
 }
