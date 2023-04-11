@@ -19,18 +19,23 @@ body {
   text-align: center;
 }
 
-nav {
+/* nav {
   display: flex;
   align-items: center;
-}
+} */
 .home{
   display: grid;
-  gap: 20;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .home { grid-template-columns: repeat(2, 1fr); }
 }
+
+.home-footer{
+  color:var(--accent-color);
+  margin-top: 20px;
+}
+
 nav a {
   font-size: 20px;
   margin-left: 10px;

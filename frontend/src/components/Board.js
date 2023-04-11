@@ -103,10 +103,11 @@ const Board = ({goal})=>{
            
             <p><strong>Finish On: {goal.finishOn}</strong></p>
             <p><strong>Current Progress: {goal.progress}%</strong></p>
-            
+            <div class="goal-footer">
             <ProgressBar className="bar" now={goal.progress} label={`${goal.progress}%`}/>
             <h2 className="material-symbols-outlined"onClick={deleteClick}>delete_sweep</h2>
             <span className="material-symbols-outlined" onClick={updateClick}>edit_square</span>
+            </div>
         </div>
     )
 }
