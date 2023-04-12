@@ -122,6 +122,7 @@ input[type='date']{
 }
 
 form.signup, form.login {
+  text-align: center;
   font-family: 'Bangers';
   color: #fff;
   letter-spacing: 3px;
