@@ -11,3 +11,7 @@
 .friend-feed{
     color: var(--highlight-color)
 }
+
+.friends p{
+  color: var(--highlight-color)
+}

@@ -64,13 +64,13 @@ const Feed = () => {
               setSuccessMessage("Succesfully added to your friend list!");
               setSearchEmail('')
               setFilteredUsers([])
-              
               console.log('Friend Added')
-                
+           
             }
         } catch (error) {
             console.error('Error adding friend:', error);
         }
+        
     };
 
     const handleCancelAddFriend = () => {
@@ -79,7 +79,6 @@ const Feed = () => {
         
       };
       
-
     return (
         <div>
           <div className="friends">

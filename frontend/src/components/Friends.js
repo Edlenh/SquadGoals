@@ -42,7 +42,7 @@ const FriendGoals = () => {
     };
   
     fetchFriendGoals();
-  }, [user]);
+  }, [user,friendGoals]);
 
   return (
     <div className='friend-feed'>
