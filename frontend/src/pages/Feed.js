@@ -88,8 +88,8 @@ const Feed = () => {
                placeholder='Enter Username'
                value={searchEmail} onChange={handleSearchChange} />
                <div className='button-wrapper'>
-              <button onClick={handleSearchClick}>Search</button>
-              <button onClick={handleCancelAddFriend}>Cancel</button>
+              <button className='search-button' onClick={handleSearchClick}>Search</button>
+              <button className='cancel-button' onClick={handleCancelAddFriend}>Cancel</button>
               </div>
             </div>
             {filteredUsers.length > 0 ? (

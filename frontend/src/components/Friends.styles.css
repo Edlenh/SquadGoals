@@ -17,9 +17,19 @@
 }
 
 .friend-feed{
-    color: var(--highlight-color)
+    color: var(--highlight-color);
+    font-family: 'Bangers';
+    margin-left: -40px;
 }
-
+.friend-feed ul{
+  margin-left: -15px;
+}
+.friend-header{
+  margin-top: 50px;
+  font-family: 'Bangers';
+  justify-content: center;
+  margin-left: -30px;
+}
 .friends p , .friends h2{
   color: var(--highlight-color)
 }

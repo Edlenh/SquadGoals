@@ -136,20 +136,23 @@ form.signup, form.login {
 
 }
 
+.addgoal-button{
+  margin-left: 70px;
+}
+
 form.signup input{
   padding:15px
 
 }
 
 .friend-search{
-  width:100%;
+  width:90%;
   text-align: center;
-
-}
-
-.friend-header{
   font-family: 'Bangers';
+  margin-left: 12px;
+
 }
+
 
 form button {
   background: var(--main-color);
@@ -284,4 +287,17 @@ margin-bottom: -10px;
 		opacity: 1;
 		text-shadow: 2px 2px 20px var(--accent-color)
 	}
+}
+.search-button{
+  margin-right: 20px;
+}
+
+.button-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-left: 40px auto;
+ 
+}
+.cancel-button{
+  margin-right: 1px;
 }
