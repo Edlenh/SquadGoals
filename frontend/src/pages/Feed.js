@@ -81,7 +81,7 @@ const Feed = () => {
     return (
         <div className='friends-home' >
           <div className="friends">
-            <h2 className='friend-header'>Search User</h2>
+            <h1 className='friend-header'>Search User</h1>
             <div>
               <input className='friend-search' 
                type="text" 
@@ -95,8 +95,13 @@ const Feed = () => {
             {filteredUsers.length > 0 ? (
               filteredUsers.map(user => (
                 <div key={user._id}>
-                  <p>{user.email}</p>
-                  <button onClick={() => handleAddFriend(user._id)}>Add To Squad</button>
+                  <div className='addFriendContainer'>
+                  <p className='addFriendUser'>{user.email}</p>
+                  <button className='addFriendButton' onClick={() => handleAddFriend(user._id)}>
+                  <span class="material-symbols-outlined">person_add</span>
+                  
+                  </button>
+                  </div>
                
                 </div>
               ))

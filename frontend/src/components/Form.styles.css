@@ -13,15 +13,10 @@
     margin-left: 25px;
 }
 
-
-
-/* .create-form{
-    display: flex;
-    flex-direction: column;
+.create{
+    margin-top: 10px;
 }
 
-@media (max-width: 900px) {
-    .create-form {
-        flex-direction: column;
-    }
-  } */
+.home-tag{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

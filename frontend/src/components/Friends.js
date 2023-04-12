@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 import './Friends.styles.css'
-// import Squad from '../components/assets/images/friends.svg'
-// import Cheer from '../components/assets/images/cheer.svg'
+
 
 const FriendGoals = () => {
   const {user} = useAuthContext()
@@ -54,7 +53,7 @@ const FriendGoals = () => {
 
   return (
     <div className='friend-feed'>
-      <h1>Friend Goals</h1>
+      <h1 className='friend-main'>Friend Goals</h1>
       <ul>
       {friendGoals.map((goals, index) => (
       <li key={index}>

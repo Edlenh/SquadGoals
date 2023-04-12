@@ -35,7 +35,7 @@ nav {
 
 .home-footer{
   color:var(--accent-color);
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 nav a {
@@ -146,15 +146,6 @@ form.signup input{
 
 }
 
-.friend-search{
-  width:90%;
-  text-align: center;
-  font-family: 'Bangers';
-  margin-left: 12px;
-
-}
-
-
 form button {
   background: var(--main-color);
   margin-right: 70px;
@@ -191,6 +182,7 @@ form button {
   margin: 5px auto;
   padding: 5px;
 }
+
 
 
 .form-footer-container{
@@ -301,4 +293,18 @@ margin-bottom: -10px;
 }
 .cancel-button{
   margin-right: 1px;
+}
+
+.addFriendContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.addFriendButton{
+  margin-left: 100px;
+}
+
+.addFriendUser{
+  margin-top: 20px;
 }
