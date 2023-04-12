@@ -8,9 +8,9 @@ const motivationalQuote = async (req, res) => {
     const openai = new OpenAIApi(configuration);
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: "Generate a motivational quote",
+      prompt: "Generate a random motivational quote",
       max_tokens: 50,
-      temperature: 0,
+      temperature: 0.8,
       top_p: 1.0,
 
     });
