@@ -6,11 +6,8 @@ import { useAuthContext } from "../hooks/userAuthContext";
 import './Board.style.css'
 
 const Board = ({goal})=>{
-  
     const {dispatch} = useGoalContext()
-    
     const {user} = useAuthContext()
-    
     const [editing, setEditing] = useState(false)
     const [boardData, setBoardData] = useState({
         title: goal.title,
@@ -98,16 +95,18 @@ const Board = ({goal})=>{
     }
 
     return(
+        <div className='goal-main'>
         <div className="goal-details">
-             <p className='goal-title'><strong> {goal.title}</strong></p>
-           
-            <p><strong>Finish On: {goal.finishOn}</strong></p>
-            <p><strong>Current Progress: {goal.progress}%</strong></p>
+            <h3 className='goal-title'><strong> {goal.title}</strong></h3>
+            <p className='goal-detail'><strong>Finish On: {goal.finishOn}</strong></p>
+            <p className='goal-detail'><strong>Current Progress: {goal.progress}%</strong></p>
             <div className="goal-footer">
             <ProgressBar className="bar" now={goal.progress} label={`${goal.progress}%`}/>
             <h2 className="material-symbols-outlined"onClick={deleteClick}>delete_sweep</h2>
             <span className="material-symbols-outlined" onClick={updateClick}>edit_square</span>
             </div>
+        </div>
+      
         </div>
     )
 }

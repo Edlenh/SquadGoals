@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useGoalContext } from "../hooks/userGoal";
 import { useAuthContext } from "../hooks/userAuthContext";
 import goalSvg from '../components/assets/images/goals.svg'
+import './Form.styles.css'
 
 const Form = ()=>{
     const {dispatch} = useGoalContext()
@@ -42,6 +43,7 @@ const Form = ()=>{
     }
     return(
         //creating a new goal
+        <div className="create-form">
         <form className="create" onSubmit={handleSubmit}>
             <h3>Start a New Goal</h3>
             <input
@@ -58,7 +60,7 @@ const Form = ()=>{
             />
             <label>Current Progress %: </label>
             <input
-            placeholder="Current Progress %"
+            placeholder="Set Progress %"
             type="number"
             onChange={(e)=>setProgress(e.target.value)}
             value={progress}
@@ -68,6 +70,7 @@ const Form = ()=>{
             <h1 className="home-footer">Something cool will go here</h1>
             <img alt="girl with list of goals"src={goalSvg} />
         </form>
+        </div>
         
     )
 }

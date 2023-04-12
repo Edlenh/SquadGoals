@@ -33,6 +33,7 @@ const Home =()=>{
         {goals && goals.map((goal)=>(
             <Board key={goal._id} goal={goal}/>
         ))}
+    
         </div>
         <Form />
        

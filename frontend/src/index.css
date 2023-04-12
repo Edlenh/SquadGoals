@@ -17,15 +17,17 @@ body {
 
 .App {
   text-align: center;
+  display: grid;
 }
 
-/* nav {
+nav {
   display: flex;
   align-items: center;
-} */
+}
 .home{
   display: grid;
 }
+
 
 @media (min-width: 900px) {
   .home { grid-template-columns: repeat(2, 1fr); }
@@ -104,7 +106,15 @@ input:focus, textarea:focus {
 }
 
 input::placeholder{
-  color: var(--bg-main)
+  color: var(--bg-main);
+  text-align: center;
+  font-size: 20px;
+}
+
+input[type='date']{
+  color: var(--bg-main);
+  text-align: center;
+  font-size: 20px;
 }
 
 .login-wrapper, .signup-wrapper{
@@ -131,6 +141,15 @@ form.signup input{
 
 }
 
+.friend-search{
+  width:100%;
+  text-align: center;
+
+}
+
+.friend-header{
+  font-family: 'Bangers';
+}
 
 form button {
   background: var(--main-color);
@@ -174,17 +193,13 @@ form button {
   margin-left: 100px;
 }
 
-
 .goal-details h4 {
   margin: 0 0 10px 0;
-  font-size: 1.2em;
+  font-size: 2em;
   color: var(--primary);
 }
 
 .goal-details span {
-  /* position: absolute;
-  top: 20px;
-  right: 20px; */
   cursor: pointer;
   background: var(--secondary-color);
   padding: 6px;
@@ -200,6 +215,10 @@ form button {
   font-size: 15px;
 }
 
+.board-footer{
+  color: var(--highlight-color);
+  font-family: 'Permanent Marker', cursive;
+}
 
 .main-title{
   color:var(--accent-color);

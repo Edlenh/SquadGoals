@@ -23,7 +23,10 @@
     color: var(--accent-color)
 }
 
-
+.goal-tag{
+  color: var(--accent-color);
+  font-family: 'Bangers';
+}
 .goal-details {
     background: var(--bg-main);
     margin: 20px auto;
@@ -43,9 +46,15 @@
     color: var(--bg-main);
     font-family: 'Bangers';
     font-weight: bolder;
+    font-size: 20px;
   }
 .goal-title{
     font-size: 25px;
+    color: var(--accent-color)
+}
+
+.goal-detail{
+  font-size: 25px;
 }
 
 .create{

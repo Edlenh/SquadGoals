@@ -3,12 +3,11 @@ import { useAuthContext } from '../hooks/userAuthContext';
 import jwt from 'jwt-decode' 
 import Friends from '../components/Friends'
 
+
 const Feed = () => {
   // console.log("hitting Feed page")
   const {user} = useAuthContext()
-
- 
- const userId =jwt(user.token)._id
+  const userId =jwt(user.token)._id
 
 
     const [searchEmail, setSearchEmail] = useState(''); // State to capture search input
@@ -80,19 +79,24 @@ const Feed = () => {
       };
       
     return (
-        <div>
+        <div className='friends-home' >
           <div className="friends">
-            <h2>Add Friend</h2>
+            <h2 className='friend-header'>Search User</h2>
             <div>
-              <input type="text" value={searchEmail} onChange={handleSearchChange} />
+              <input className='friend-search' 
+               type="text" 
+               placeholder='Enter Username'
+               value={searchEmail} onChange={handleSearchChange} />
+               <div className='button-wrapper'>
               <button onClick={handleSearchClick}>Search</button>
               <button onClick={handleCancelAddFriend}>Cancel</button>
+              </div>
             </div>
             {filteredUsers.length > 0 ? (
               filteredUsers.map(user => (
                 <div key={user._id}>
                   <p>{user.email}</p>
-                  <button onClick={() => handleAddFriend(user._id)}>Add Friend</button>
+                  <button onClick={() => handleAddFriend(user._id)}>Add To Squad</button>
                
                 </div>
               ))

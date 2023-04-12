@@ -1,0 +1,25 @@
+:root{
+    --main-color: #114B5F;
+    --secondary-color: #028090;
+    --primary-color: #2A9D8F;
+    --highlight-color: #2EC4B6;
+    --accent-color: #E4FDE1;
+    --error:#d00000;
+    --bg-main: #252422;
+  
+  }
+
+.create-form input{
+    margin-left: 50px;
+}
+
+/* .create-form{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .create-form {
+        flex-direction: column;
+    }
+  } */

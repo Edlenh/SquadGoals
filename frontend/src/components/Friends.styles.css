@@ -8,10 +8,35 @@
     --bg-main: #252422;
   
   }
+.friends-home{
+  display: grid;
+}
+
+@media (min-width: 900px) {
+  .friends-home { grid-template-columns: repeat(2, 1fr); }
+}
+
 .friend-feed{
     color: var(--highlight-color)
 }
 
-.friends p{
+.friends p , .friends h2{
   color: var(--highlight-color)
+}
+
+button {
+  background: var(--main-color);
+  margin-right: 70px;
+  border: 20px;
+  color: var(--accent-color);
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Bangers';
+  width:100px;
+}
+
+.input{
+ width:  100%;
 }
