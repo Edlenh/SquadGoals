@@ -8,7 +8,9 @@
   --bg-main: #252422;
 
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: var(--bg-main);
   margin: 0;
@@ -70,10 +72,13 @@ header .container {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: var(--bg-main);
 }
-
+.app-name{
+  color: var(--accent-color);
+  font-family: 'Permanent Marker', cursive;
+}
 div.error {
   padding: 10px;
   background: #ffefef;

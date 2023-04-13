@@ -15,13 +15,17 @@ const Nav =  ()=>{
     return(
         <header>
             <div className="container">
-            {/* <Link to="/">
-                <h1 className='main-title'>Squad Goals</h1>
-            </Link> */}
+            {user ? (
+        <Link to="/">
+            <span className='account-circle' class="material-symbols-outlined">account_circle</span>
+        </Link>
+    ) : (
+        <span className='app-name'>SquadGoals</span>
+    )}
             <nav>
                 { user && (
                 <div className='navii'>
-                    <span className='main-user'> <span className='main-span'></span>  {user.email}</span>
+                   
                     {location.pathname !== '/feed' && ( 
                                 <Link to="/feed">Friends</Link>
                             )}
