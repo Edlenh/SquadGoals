@@ -9,14 +9,8 @@
   
   }
 
-.create-form input{
-    margin-left: 25px;
+  
+body{
+    background-color: var(--bg-main);
 }
 
-.create{
-    margin-top: 10px;
-}
-
-.home-tag{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}

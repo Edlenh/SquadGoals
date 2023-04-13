@@ -2,8 +2,9 @@ import { useEffect } from "react"
 import {useAuthContext} from '../hooks/userAuthContext'
 import { useGoalContext } from "../hooks/userGoal"
 
-import Board from "../components/Board"
-import Form from "../components/Form"
+import Board from "../components/Board/Board"
+import Form from "../components/Form/Form"
+// import Footer from '../components/Footer/Footer'
 
 const Home =()=>{
     const {goals, dispatch} = useGoalContext()
@@ -38,7 +39,7 @@ const Home =()=>{
         <Form />
        
         </div>
-     
+            {/* <Footer /> */}
         </div>
     )
 }

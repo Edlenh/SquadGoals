@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useGoalContext } from "../hooks/userGoal";
-import { useAuthContext } from "../hooks/userAuthContext";
+import { useGoalContext } from "../../hooks/userGoal";
+import { useAuthContext } from "../../hooks/userAuthContext";
 import './Form.styles.css'
-import MotivationalQuote from "./Quote";
+import MotivationalQuote from "../Quote/Quote";
 
 const Form = ()=>{
     const {dispatch} = useGoalContext()
@@ -45,20 +45,20 @@ const Form = ()=>{
         //creating a new goal
         <div className="create-form">
         <form className="create" onSubmit={handleSubmit}>
-            <h3>Start a New Goal</h3>
+            <h3 className="create-title">Start a New Goal</h3>
             <input
             placeholder="Title"
             type="text"
             onChange={(e)=>setTitle(e.target.value)}
             value={title}
             />
-            <label>Finish Date: </label>
+            <label className="create-title">Finish Date: </label>
             <input
             type="date"
             onChange={(e)=>setFinishOn(e.target.value)}
             value={finishOn}
             />
-            <label>Current Progress %: </label>
+            <label className="create-title">Current Progress %: </label>
             <input
             placeholder="Set Progress %"
             type="number"

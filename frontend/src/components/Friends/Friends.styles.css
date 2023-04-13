@@ -8,9 +8,19 @@
     --bg-main: #252422;
   
   }
+
+html, body {
+    overflow-x: hidden;
+}
+body {
+    position: relative
+}
+
 .friends-home{
   display: grid;
 }
+
+
 .friend-search input{
   text-align: center;
 }
@@ -19,11 +29,12 @@
 }
 
 .friend-search{
-  width:90%;
+  width:95%;
   text-align: center;
   font-family: 'Bangers';
 
 }
+
 .friend-main{
   display: flex;
  justify-content: center;
@@ -73,7 +84,43 @@ button {
   font-family: 'Bangers';
   width:100px;
 }
-
+.card-body button{
+background-color: var(--bg-main);
+border: none;
+}
+.card-body{
+  background-color: var(--bg-main);
+}
+.card-title{
+  color: var(--highlight-color);
+}
 .input{
  width:  100%;
+}
+
+.progress-bar{
+  background:var(--primary-color);
+  color: #fff;
+  font-family: 'Bangers';
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.friend-goal-detail{
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+.addFriendContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.addFriendButton{
+  margin-left: 55px;
+}
+
+.addFriendUser{
+  margin-top: 20px;
 }

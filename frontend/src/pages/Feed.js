@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 import jwt from 'jwt-decode' 
-import Friends from '../components/Friends'
-
+import Friends from '../components/Friends/Friends'
+import { Card, Button } from 'react-bootstrap';
 
 const Feed = () => {
   // console.log("hitting Feed page")
@@ -95,16 +95,16 @@ const Feed = () => {
             {filteredUsers.length > 0 ? (
               filteredUsers.map(user => (
                 <div key={user._id}>
-                  <div className='addFriendContainer'>
-                  <p className='addFriendUser'>{user.email}</p>
-                  <button className='addFriendButton' onClick={() => handleAddFriend(user._id)}>
-                  <span class="material-symbols-outlined">person_add</span>
-                  
-                  </button>
-                  </div>
-               
-                </div>
-              ))
+              <Card className='user-card'>
+                <Card.Body>
+                  <Card.Title>{user.email}</Card.Title>
+                  <Button className='addFriendButton' onClick={() => handleAddFriend(user._id)}>
+                    <span className="material-symbols-outlined">person_add</span>
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+          ))
             ) : (
               <p>{errorMessage}</p>
             )}

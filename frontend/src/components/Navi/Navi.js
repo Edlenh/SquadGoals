@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
-import { useLogout } from '../hooks/userLogOut'
-import { useAuthContext } from '../hooks/userAuthContext'
+import { useLogout } from '../../hooks/userLogOut'
+import { useAuthContext } from '../../hooks/userAuthContext'
 import './Navi.style.css'
 
 

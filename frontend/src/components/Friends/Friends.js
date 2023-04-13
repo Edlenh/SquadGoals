@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useAuthContext } from '../hooks/userAuthContext';
+import { useAuthContext } from '../../hooks/userAuthContext';
 import './Friends.styles.css'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+
 
 const FriendGoals = () => {
   const { user } = useAuthContext()
@@ -61,14 +62,15 @@ const FriendGoals = () => {
           {friendGoals.map((goals, index) => (
             <ListGroup.Item key={index}>
               <h3>{goals.friendUsername}</h3>
-              <p>{goals.title}</p>
-              <p>Finish Date: {goals.finishOn}</p>
-              <p>Current Progress:{goals.progress}%</p>
+              <p className='friend-goal-detail'>{goals.title}</p>
+              <p  className='friend-goal-detail'>Finish Date: {goals.finishOn}</p>
+              <p  className='friend-goal-detail'>Current Progress:{goals.progress}%</p>
               <ProgressBar className="bar" now={goals.progress} label={`${goals.progress}%`} />
             </ListGroup.Item>
           ))}
         </ListGroup>
       </Card>
+     
     </div>
   );
 };

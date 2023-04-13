@@ -36,10 +36,13 @@ Monday
 styling home page //DONE
 
 Tuesday
-Implement motivational quote on their home page >> ChatGPT text-davinci-003
-if too simple look into how to obtain your goals based on the categories you are providing to ChatGPT 
-Notification work - working real time
-ping expirations dates
-Start notifications 
-react-notifications-component
-if user completes goal > send notif to other user > (maybe a pop up on side bar or something) > then post goal completed on 
+Implement motivational quote on their home page >> ChatGPT text-davinci-003 //DONE
+if too simple look into how to obtain your goals based on the categories you are providing to ChatGPT  //DONE
+
+Thursday
+Finish Styling
+Nav
+Footer
+Friend List
+
+Deploy

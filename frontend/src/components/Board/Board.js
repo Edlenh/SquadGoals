@@ -1,8 +1,8 @@
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import React from 'react';
-import { useGoalContext } from "../hooks/userGoal";
+import { useGoalContext } from "../../hooks/userGoal";
 import { useState } from "react";
-import { useAuthContext } from "../hooks/userAuthContext";
+import { useAuthContext } from "../../hooks/userAuthContext";
 import './Board.style.css'
 
 const Board = ({goal})=>{
@@ -96,7 +96,7 @@ const Board = ({goal})=>{
 
     return(
         <div className='goal-main'>
-            <h1 className='goal-heading'>Activity</h1>
+            <h1 className='goal-heading'>Goals</h1>
         <div className="goal-details">
             <h3 className='goal-title'><strong> {goal.title}</strong></h3>
             <p className='goal-detail'><strong>Finish On: {goal.finishOn}</strong></p>

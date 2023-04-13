@@ -3,7 +3,7 @@ import { useAuthContext } from './hooks/userAuthContext';
 
 import Home from './pages/Home';
 import Feed from './pages/Feed';
-import Nav from './components/Navi';
+import Nav from './components/Navi/Navi'
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 

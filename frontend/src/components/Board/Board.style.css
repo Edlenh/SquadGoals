@@ -36,7 +36,7 @@
 .goal-details p {
     margin: 0;
     font-size: 0.9em;
-    color: var(--accent-color)
+    color: #fff
   }
 
 .progress-bar{
@@ -51,9 +51,6 @@
     color: var(--accent-color)
 }
 
-.goal-detail{
-  font-size: 25px;
-}
 
 .create{
     color:var(--highlight-color);
@@ -66,8 +63,3 @@
     margin-left: 10px;
 }
 
-.goal-heading{
-  font-family: 'Permanent Marker', cursive;
-  color: var(--highlight-color);
-  margin-bottom: -46px;
-}
