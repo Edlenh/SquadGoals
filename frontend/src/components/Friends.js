@@ -60,8 +60,8 @@ const FriendGoals = () => {
         <ListGroup variant="flush">
           {friendGoals.map((goals, index) => (
             <ListGroup.Item key={index}>
-              <h3>Friend: {goals.friendUsername}</h3>
-              <p>Title: {goals.title}</p>
+              <h3>{goals.friendUsername}</h3>
+              <p>{goals.title}</p>
               <p>Finish Date: {goals.finishOn}</p>
               <p>Current Progress:{goals.progress}%</p>
               <ProgressBar className="bar" now={goals.progress} label={`${goals.progress}%`} />

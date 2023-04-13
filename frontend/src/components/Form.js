@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useGoalContext } from "../hooks/userGoal";
 import { useAuthContext } from "../hooks/userAuthContext";
 import './Form.styles.css'
-// import MotivationalQuote from "./Quote";
+import MotivationalQuote from "./Quote";
 
 const Form = ()=>{
     const {dispatch} = useGoalContext()
@@ -69,7 +69,7 @@ const Form = ()=>{
             {error && <div className="error">{error}</div>}
             <h1 className="home-footer">Today's Motivation</h1>
             <div className="home-tag">
-            {/* <p ><MotivationalQuote /></p>  */}
+            <p ><MotivationalQuote /></p> 
             </div>
         </form>
         </div>
