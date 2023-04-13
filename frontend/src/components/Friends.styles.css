@@ -30,17 +30,30 @@
  margin-left: 40px;
 }
 
-.friend-feed{
+.friend-feed h1{
+  margin-left: -15px;
+}
+
+.friend-feed {
+  color: var(--highlight-color);
+  font-family: 'Bangers';
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .friend-feed {
     color: var(--highlight-color);
     font-family: 'Bangers';
-    margin-left: -40px;
+    margin-left: 274px;
+  }
 }
+
 .friend-feed ul{
   margin-left: -15px;
 }
-.friend-header{
+.friend-header {
   color: var(--accent-color);
-  margin-top: 50px;
+  margin-top: 9px;
   font-family: 'Bangers';
   text-align: center;
 }

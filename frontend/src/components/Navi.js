@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useLogout } from '../hooks/userLogOut'
 import { useAuthContext } from '../hooks/userAuthContext'
+import './Navi.style.css'
 
 
 const Nav =  ()=>{
@@ -14,12 +15,12 @@ const Nav =  ()=>{
     return(
         <header>
             <div className="container">
-            <Link to="/">
+            {/* <Link to="/">
                 <h1 className='main-title'>Squad Goals</h1>
-            </Link>
+            </Link> */}
             <nav>
                 { user && (
-                <div>
+                <div className='navii'>
                     <span className='main-user'> <span className='main-span'></span>  {user.email}</span>
                     {location.pathname !== '/feed' && ( 
                                 <Link to="/feed">Friends</Link>
@@ -28,7 +29,7 @@ const Nav =  ()=>{
                                 <Link to="/">Home</Link>
                             )}
                    
-                    <button onClick={ logoutClick }>Log Out</button>
+                    <button className='nav-button' onClick={ logoutClick }>Log Out</button>
 
                 </div>
                 )}

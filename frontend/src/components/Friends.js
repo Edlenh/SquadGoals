@@ -1,70 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/userAuthContext';
 import './Friends.styles.css'
-
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const FriendGoals = () => {
-  const {user} = useAuthContext()
+  const { user } = useAuthContext()
   const [friendGoals, setFriendGoals] = useState([]);
 
   useEffect(() => {
     const fetchFriendGoals = async () => {
       try {
-        const response = await fetch('api/goal/friend/',{
-            method: 'GET',
-            headers:{
-                'Content-Type': 'application/json',
-                'Authorization' :`Bearer ${user.token}`
-            }
+        const response = await fetch('api/goal/friend/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+          }
         });
         const data = await response.json();
-        const fetchedFriendGoals = []; 
-        
+        const fetchedFriendGoals = [];
+
         // Iterate through the data.friends array
         for (let i = 0; i < data.friends.length; i++) {
-          const friend = data.friends[i]; 
-      
+          const friend = data.friends[i];
+
           // Check if the friend object has a goals property and it is an array
           if (friend.goals && Array.isArray(friend.goals)) {
             // Loop through the goals array of the friend object
             for (let j = 0; j < friend.goals.length; j++) {
-              
-           
-              const goal = friend.goals[j]; 
+
+
+              const goal = friend.goals[j];
               goal.friendUsername = friend.username;
-              fetchedFriendGoals.push(goal); 
+              fetchedFriendGoals.push(goal);
             }
           }
-        
+
         }
-  
+
         console.log("Friend Goals:", fetchedFriendGoals);
-        setFriendGoals(fetchedFriendGoals); 
-      
-      
-       
+        setFriendGoals(fetchedFriendGoals);
+
+
+
       } catch (error) {
         console.error('Error fetching friend goals:', error);
       }
     };
-  
+
     fetchFriendGoals();
   }, [user]);
 
   return (
     <div className='friend-feed'>
       <h1 className='friend-main'>Friend Goals</h1>
-      <ul>
-      {friendGoals.map((goals, index) => (
-      <li key={index}>
-      <h3>Friend: {goals.friendUsername}</h3>
-      <p>Title: {goals.title}</p>
-      <p>Progress: {goals.progress}</p>
-      <p>Created At: {goals.createdAt}</p>
-  </li>
-))}
-      </ul>
-    
+      <Card style={{ width: '18rem' }}>
+        <ListGroup variant="flush">
+          {friendGoals.map((goals, index) => (
+            <ListGroup.Item key={index}>
+              <h3>Friend: {goals.friendUsername}</h3>
+              <p>Title: {goals.title}</p>
+              <p>Finish Date: {goals.finishOn}</p>
+              <p>Current Progress:{goals.progress}%</p>
+              <ProgressBar className="bar" now={goals.progress} label={`${goals.progress}%`} />
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </Card>
     </div>
   );
 };

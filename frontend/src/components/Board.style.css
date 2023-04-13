@@ -28,13 +28,11 @@
   font-family: 'Bangers';
 }
 .goal-details {
-    background: var(--bg-main);
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: -1px 1px 5px 2px var(--highlight-color);
-  
-  }
-
+  background: var(--bg-main);
+  margin: 54px auto;
+  padding: 20px;
+  box-shadow: -1px 1px 5px 2px var(--highlight-color);
+}
 .goal-details p {
     margin: 0;
     font-size: 0.9em;
@@ -66,4 +64,10 @@
 }
 .material-symbols-outlined{
     margin-left: 10px;
+}
+
+.goal-heading{
+  font-family: 'Permanent Marker', cursive;
+  color: var(--highlight-color);
+  margin-bottom: -46px;
 }
