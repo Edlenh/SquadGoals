@@ -36,7 +36,8 @@
 .goal-details p {
     margin: 0;
     font-size: 0.9em;
-    color: #fff
+    color: #fff;
+    padding-top: 3px;
   }
 
 .progress-bar{
@@ -63,3 +64,7 @@
     margin-left: 10px;
 }
 
+.bar{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}

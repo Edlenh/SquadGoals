@@ -30,7 +30,7 @@ const Home =()=>{
         <div>
         <div className="home">
         <div className="goals">
-    
+        <h1 className='goal-heading'>Goals</h1>
         {goals && goals.map((goal)=>(
             <Board key={goal._id} goal={goal}/>
         ))}

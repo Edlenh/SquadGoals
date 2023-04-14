@@ -96,7 +96,6 @@ const Board = ({goal})=>{
 
     return(
         <div className='goal-main'>
-            <h1 className='goal-heading'>Goals</h1>
         <div className="goal-details">
             <h3 className='goal-title'><strong> {goal.title}</strong></h3>
             <p className='goal-detail'><strong>Finish On: {goal.finishOn}</strong></p>

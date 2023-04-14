@@ -14,7 +14,7 @@
 }
 
 .goal-heading{
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: 'Bangers';
     letter-spacing: 1px;
     color: var(--accent-color);
@@ -45,7 +45,6 @@
     font-family: 'Bangers';
     font-weight: bolder;
     font-size: 25px;
-    border-radius: 20px;
   }
 
 .goal-title{
@@ -54,5 +53,5 @@
 }
 
 .p{
-    color:#fff
+    color:#fff;
 }

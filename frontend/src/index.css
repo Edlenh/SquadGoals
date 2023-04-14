@@ -214,6 +214,7 @@ form button {
 .goals{
   background-color: var(--bg-main);
 }
+
 .material-symbols-outlined{
   cursor: pointer;
   background: var(--highlight-color);
