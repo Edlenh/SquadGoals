@@ -11,9 +11,10 @@ const FriendGoals = () => {
   const [friendGoals, setFriendGoals] = useState([]);
 
   useEffect(() => {
+    console.log('efie')
     const fetchFriendGoals = async () => {
       try {
-        const response = await fetch('api/goal/friend/', {
+        const response = await fetch('/api/goal/friend', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

@@ -19,8 +19,9 @@ const getFriendGoals = async(req,res)=>{
         .populate({
             path: "friends",
             populate: { path: 'goals' },
-          })
-          
+        })
+        
+        console.log(user_id, user)
         res.status(200).json(user);
         
     }catch(error){

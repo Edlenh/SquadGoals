@@ -20,6 +20,6 @@ router.put('/:id', updateGoal)
 //delete goal
 router.delete('/:id', deleteGoal)
 //get friend's goals
-router.get('/friend/', getFriendGoals )
+router.get('/friend', getFriendGoals )
 
 module.exports = router

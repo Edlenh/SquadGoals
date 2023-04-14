@@ -11,10 +11,8 @@ const mongoose = require('mongoose')
 
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
-  });
+app.use(express.static(path.resolve(__dirname, "./build")));
+
 //set up PORT
 const PORT= process.env.PORT || 4000
 
@@ -30,6 +28,11 @@ app.use((req,res,next)=>{
 app.use('/api/user', userRoutes)
 app.use('/api/goal', goalRoutes)
 app.use('/api/quote', quoteRoutes)
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, './build', 'index.html'));
+  });
+
 //fire up server
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{

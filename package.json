@@ -8,6 +8,7 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "bootstrap": "^5.2.3",
+        "concurrently": "^8.0.1",
         "dotenv": "^16.0.3",
         "heroku": "^8.0.4",
         "jsonwebtoken": "^9.0.0",
@@ -21,10 +22,11 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
+        "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\"",
+        "build": "cd frontend && npm run build && rm -rf ../backend/build && mv ./build ../backend",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "serve": "cd backend && npm start"
     },
     "eslintConfig": {
         "extends": [
