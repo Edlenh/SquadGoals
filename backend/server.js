@@ -30,7 +30,7 @@ app.use('/api/goal', goalRoutes)
 app.use('/api/quote', quoteRoutes)
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './build', 'index.html'));
+    res.sendFile(path.join(__dirname, '..frontend/build/index.html'));
   });
 
 //fire up server
