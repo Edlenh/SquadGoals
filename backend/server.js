@@ -10,7 +10,7 @@ const mongoose = require('mongoose')
 
 
 const app = express();
-
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 //set up PORT
 const PORT= process.env.PORT || 4000
 
