@@ -33,9 +33,9 @@ app.use('/api/quote', quoteRoutes)
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
   });
-  
+
 //fire up server
-mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/accountability')
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     app.listen(PORT, ()=>{
         console.log(`Connected to DB and listening to port at http://localhost:${PORT}`)
