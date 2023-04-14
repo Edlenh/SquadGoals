@@ -12,7 +12,7 @@ const mongoose = require('mongoose')
 
 const app = express();
 const PORT= process.env.PORT || 4000
-app.use(express.static(path.resolve(__dirname, "./build")));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
 
 //set up PORT
 
@@ -30,10 +30,10 @@ app.use('/api/user', userRoutes)
 app.use('/api/goal', goalRoutes)
 app.use('/api/quote', quoteRoutes)
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '..frontend/build/index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
   });
-
+  
 //fire up server
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/accountability')
 .then(()=>{
