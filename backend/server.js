@@ -11,10 +11,11 @@ const mongoose = require('mongoose')
 
 
 const app = express();
+const PORT= process.env.PORT || 4000
 app.use(express.static(path.resolve(__dirname, "./build")));
 
 //set up PORT
-const PORT= process.env.PORT || 4000
+
 
 // middleware
 app.use(express.json())
@@ -34,7 +35,7 @@ app.get('*', function(req, res) {
   });
 
 //fire up server
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/accountability')
 .then(()=>{
     app.listen(PORT, ()=>{
         console.log(`Connected to DB and listening to port at http://localhost:${PORT}`)
