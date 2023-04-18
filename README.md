@@ -2,7 +2,9 @@
 Final Project for Full Stack Coding Bootcamp
 
 ## Description
-Track not only your goals but also your friends' goals. Keep eachother accountable as you progress in your goals. 
+Track not only your goals but also your friends' goals. Keep eachother accountable as you progress in your goals. <br>
+Users will be able to create goals and edit them as they progress. When they complete their goals or give up on them they can delete them. <br>
+Based on who they add to their friend's list they can see their goals as well. 
 
 ## Installation
 --npm start
